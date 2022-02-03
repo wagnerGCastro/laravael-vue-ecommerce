@@ -76,3 +76,50 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/full_screen_preview/25693269?_ga=2.167222525.2138072073.1643757839-1330403738.1638874730
+
+
+## Cofigurations
+
+-- mysl
+    host: mysql
+    user: default
+    pass: secret
+    data: default
+
+-- projet
+    http://local.laravel-vue-ecommerce:8049/
+
+-- wordkspace
+
+-- phpmyadmin
+    http://localhost:8082
+
+-- cd ./laradock
+    docker-compose up -d apache2 mysql phpmyadmin workspace
+    docker-compose stop  apache2 mysql phpmyadmin workspace 
+    docker-compose down --volumes apache2 mysql phpmyadmin workspace
+
+    docker container stop 8484c645f7c8 340b91067af4 9fc99eb68cf3 dda64d1e05a4 2aea07135230
+    docker container rm 8484c645f7c8 340b91067af4 9fc99eb68cf3 dda64d1e05a4 
+    
+    -- alterar version node
+    $ docker-compose build workspace
+    $ docker-compose up -d workspace
+    $ docker-compose build workspace
+
+-- Primary run dependencies
+    yarn install
+    composer install
+    php artisan migrate
+    php artisan passport:install
+    php artisan db:seed --class=DatabaseSeeder
+
+    -- clear se necessario
+    php artisan key:generate
+    php artisan cache:clear
+    php artisan route:clear
+    php artisan config:clear 
+    php artisan view:clear 
