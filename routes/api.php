@@ -26,5 +26,5 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
     Route::post('me', 'Auth\JwtController@me');
 });
 
-Route::post('login','Auth\PassportController@login');
+Route::post('login', 'Auth\PassportController@login');
 Route::post('register', 'Auth\JwtController@register');
