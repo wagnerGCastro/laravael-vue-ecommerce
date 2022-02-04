@@ -13,7 +13,7 @@ export default {
     domain: '',
     clientID: '',
     // make sure this line is contains the port: 8080
-    redirectUri: 'http://localhost:8080/callback',
+    redirectUri: 'http://localhost:8049/callback',
     // we will use the api/v2/ to access the user information as payload
     audience: 'https://dev-6u-3fb22.auth0.com/api/v2/',
     responseType: 'token id_token',
