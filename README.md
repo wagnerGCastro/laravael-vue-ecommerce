@@ -81,18 +81,22 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/full_screen_preview/25693269?_ga=2.167222525.2138072073.1643757839-1330403738.1638874730
 
 
-## Cofigurations
+## Cofigurations and documentation
 
 -- mysl
     host: mysql
+    port: 3308
     user: default
     pass: secret
     data: default
 
--- projet
+-- projet url
     http://local.laravel-vue-ecommerce:8049/
+     http://localhost:8049/
 
--- wordkspace
+-- wordkspace docker
+    $ docker-compose exec workspace bash   // root
+    $ docker-compose exec --user=laradock workspace bash  // user
 
 -- phpmyadmin
     http://localhost:8082
@@ -106,9 +110,8 @@ https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/f
     docker container rm 8484c645f7c8 340b91067af4 9fc99eb68cf3 dda64d1e05a4 
     
     -- alterar version node
-    $ docker-compose build workspace
-    $ docker-compose up -d workspace
-    $ docker-compose build workspace
+        $ docker-compose build workspace
+        $ docker-compose up -d workspace
 
 -- Primary run dependencies
     yarn install
@@ -123,3 +126,10 @@ https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/f
     php artisan route:clear
     php artisan config:clear 
     php artisan view:clear 
+
+    -- Run server
+        php artisan serve --host=0.0.0.0  --port=8049
+        php artisan serve --env=dev  --host=0.0.0.0  --port=8049
+
+    -- create user mysql: password: admin123
+        insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values ('admin', 'admin@vito.com', '$2y$10$WvPLH/ku3av42.WEH0Oi8eZv5Jast14.1Sv6ms.xspOndatTK4yw2', '2022-02-04 07:02:14', '2022-02-04 07:02:14')
