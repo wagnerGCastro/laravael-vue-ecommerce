@@ -103,8 +103,10 @@ https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/f
 
 -- cd ./laradock
     docker-compose up -d apache2 mysql phpmyadmin workspace
-    docker-compose stop  apache2 mysql phpmyadmin workspace 
     docker-compose down --volumes apache2 mysql phpmyadmin workspace
+
+    docker container stop  apache2 mysql phpmyadmin workspace 
+    docker container start laradock-vue-ecommerce-apache2-1 
 
     docker container stop 8484c645f7c8 340b91067af4 9fc99eb68cf3 dda64d1e05a4 2aea07135230
     docker container rm 8484c645f7c8 340b91067af4 9fc99eb68cf3 dda64d1e05a4 
@@ -132,6 +134,8 @@ https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/f
     -- Run server
         php artisan serve --host=0.0.0.0  --port=8049
         php artisan serve --env=dev  --host=0.0.0.0  --port=8049
+
+        php -S 0.0.0.0:8049 
 
     -- create user mysql: password: admin123
         insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values ('admin', 'admin@vito.com', '$2y$10$WvPLH/ku3av42.WEH0Oi8eZv5Jast14.1Sv6ms.xspOndatTK4yw2', '2022-02-04 07:02:14', '2022-02-04 07:02:14')

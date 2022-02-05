@@ -15,8 +15,9 @@ export default {
     return axios.post(process.env.MIX_SENTRY_DSN_API+'api/register', userData)
   },
   jwtLogin (userData) {
+    // console.log(process.env.MIX_SENTRY_DSN_API+'/api/auth/login');
     //return axios.post('http://localhost:8049/api/auth/login', userData)
-    return axios.post(process.env.MIX_SENTRY_DSN_API+'api/auth/login', userData)
+    return axios.post(process.env.MIX_SENTRY_DSN_API+'/api/auth/login', userData)
   },
   jwtRegister (userData) {
     return axios.post(process.env.MIX_SENTRY_DSN_API+'api/auth/register', userData)

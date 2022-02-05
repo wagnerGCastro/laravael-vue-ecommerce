@@ -14,3 +14,15 @@ const mix = require('laravel-mix');
 mix.setResourceRoot(process.env.MIX_SENTRY_DSN_SOURCE)
     .js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css').sourceMaps();
+
+mix.browserSync({
+    port: process.env.APP_URL_BROWNSER_SYNC,
+    ui: {
+        port: 8051,
+        weinre: {
+            port: 9090
+        }
+    },
+    proxy: process.env.APP_URL,
+});
+// mix.browserSync(process.env.APP_URL);
