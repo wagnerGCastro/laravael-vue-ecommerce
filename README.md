@@ -116,12 +116,14 @@ https://preview.themeforest.net/item/vito-bootstrap-4-admin-dashboard-template/f
 -- Primary run dependencies
     yarn install
     composer install
+    composer install --no-scripts
+    cp .env.example .env
+    php artisan key:generate
     php artisan migrate
     php artisan passport:install
     php artisan db:seed --class=DatabaseSeeder
 
     -- clear se necessario
-    php artisan key:generate
     php artisan cache:clear
     php artisan route:clear
     php artisan config:clear 

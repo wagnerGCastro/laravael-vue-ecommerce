@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Setting from './Setting/index'
-import Ecommerce from './Ecommerce/index'
+import Setting from './modules/Setting/index'
+import Ecommerce from './modules/Ecommerce/index'
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
